@@ -406,9 +406,10 @@ class acf_field_image_crop extends acf_field_image
 				// foreach( $image_sizes as $image_size )
 			}
 			// if( $image_sizes )
-			
-		}		
-		return $value;
+            return $value;
+
+        }
+		return $data->cropped_image;
 		
 	}
 
