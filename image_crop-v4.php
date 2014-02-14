@@ -350,15 +350,18 @@ class acf_field_image_crop extends acf_field_image
 		if(!is_object($data)){
 			return $value;
 		}
-		
+
+
 		// format
 		if( $field['save_format'] == 'url' )
 		{
-			$value = wp_get_attachment_url( $data['cropped_image'] );
+
+            $value = wp_get_attachment_url( $data->cropped_image );
+            return $value;
 		}
 		elseif( $field['save_format'] == 'object' )
 		{
-			$attachment = get_post( $data['cropped_image'] );
+			$attachment = get_post( $data->cropped_image );
 			
 			
 			// validate
@@ -405,7 +408,7 @@ class acf_field_image_crop extends acf_field_image
 			// if( $image_sizes )
 			
 		}		
-		return $data->cropped_image;
+		return $value;
 		
 	}
 
